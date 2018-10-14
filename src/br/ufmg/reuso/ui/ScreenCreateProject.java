@@ -252,7 +252,7 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {			
 			@Override
 			public void run() {
-				String[] retorno = (createAndShowGetCProject(tabuleiro).getReturn());
+				//String[] retorno = (createAndShowGetCProject(tabuleiro).getReturn());
 				  
 				
 			}

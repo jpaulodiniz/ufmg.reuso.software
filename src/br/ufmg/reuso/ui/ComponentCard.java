@@ -388,7 +388,7 @@ public class ComponentCard extends JPanel {
 			ygap = mySize.height * 2 / 100;
 			y += height;
 			x = xgap;
-			xgap = mySize.width * 2 / 100;
+			//xgap = mySize.width * 2 / 100;
 			width = mySize.width * 90 / 100;
 			height = mySize.height * 30 / 100;
 			lblFig.setBounds(x, y, width, height); 
