@@ -77,9 +77,9 @@ public class Artefato
 	}
 	
 	// implementacao para o padrao de projeto State
-	public void obtemEstado()
-	{
-		estado.getEstado(this);
-	}
+	//public void obtemEstado()
+	//{
+    // 		estado.getEstado(this);
+	//}
 	
 }
