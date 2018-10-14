@@ -514,12 +514,12 @@ public final class Jogo {
 			jogador.retirarCarta(cartasRetiradas[i]);
 			baralhoCartas[BARALHO_AUXILIAR].recolherCarta(cartasRetiradas[i]);
 		}
-		System.out.printf("\nMetodo retirarCarta\n"); // TODO so pra teste
+		System.out.printf("%nMetodo retirarCarta%n"); // TODO so pra teste
 		jogador.mostrarCartaMao();
 		/*************/
 		// TODO so pra teste -> mostra carta restante do jogador
 
-		System.out.printf("\nbaralho auxiliar:\n"); // TODO teste para ver
+		System.out.printf("%nbaralho auxiliar:%n"); // TODO teste para ver
 													// baralho auxiliar
 													// funiconando
 		// baralhoCartas[BARALHO_AUXILIAR].mostrarBaralho(); //TODO teste para
@@ -542,7 +542,7 @@ public final class Jogo {
 			/** se pode demitir engenheiro */
 			baralhoCartas[BARALHO_AUXILIAR].recolherCarta(engenheiroDemitido);
 
-		System.out.printf("engenheiro ainda contratados, demitidos nao consta na lista:\n");// TODO
+		System.out.printf("engenheiro ainda contratados, demitidos nao consta na lista:%n");// TODO
 																							// teste
 		mostrarCartasDasMesasDoTabuleiro(jogador);
 
@@ -562,7 +562,7 @@ public final class Jogo {
 				continue; // TODO teste
 			else // TODO TESTE
 			{ // TODO teste
-				System.out.printf("engenheiros contratados:\n");// TODO teste
+				System.out.printf("engenheiros contratados:%n");// TODO teste
 				jogador.getTabuleiro().getMesas()[i].getCartaMesa().mostrarCarta(); // utilizado
 																					// para
 																					// mostrar
@@ -606,7 +606,7 @@ public final class Jogo {
 			return jogador;
 		} else // ha pedido valido
 		{
-			System.out.printf("tem pedido valido\n");
+			System.out.printf("tem pedido valido%n");
 
 			int numeroArtefatoBons = pedido[Mesa.ARTEFATOS_BONS].somatorioModulo();
 			int numeroArtefatosRuins = pedido[Mesa.ARTEFATOS_RUINS].somatorioModulo();
@@ -684,7 +684,7 @@ public final class Jogo {
 			return jogador;
 		} else // TODO ha pedido valido
 		{
-			System.out.printf("tem pedido valido\n");
+			System.out.printf("tem pedido valido%n");
 
 			int numeroArtefatoBons = pedido[Mesa.ARTEFATOS_BONS].somatorioModulo();
 			int numeroArtefatosRuins = pedido[Mesa.ARTEFATOS_RUINS].somatorioModulo();
@@ -762,7 +762,7 @@ public final class Jogo {
 			return jogador;
 		} else // ha pedido valido
 		{
-			System.out.printf("tem pedido valido\n");
+			System.out.printf("tem pedido valido%n");
 
 			int numeroArtefatoBons = pedido[Mesa.ARTEFATOS_BONS].somatorioModulo();
 			int numeroArtefatosRuins = pedido[Mesa.ARTEFATOS_RUINS].somatorioModulo();

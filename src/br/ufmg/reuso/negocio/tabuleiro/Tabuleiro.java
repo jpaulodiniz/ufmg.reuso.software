@@ -243,7 +243,7 @@ public class Tabuleiro
 	{
 		mesas[posicaoMesa].setCartaMesa(novato);				//inserindo engenheiro novato na mesa conforme a posição escolhida
 		
-		System.out.printf("engenheiro alocado:\n");				// TODO teste
+		System.out.printf("engenheiro alocado:%n");				// TODO teste
 		mesas[posicaoMesa].getCartaMesa().mostrarCarta();		// TODO utilizado para mostrar a carta de engenheiro de software deste jogador -> ok
 	}
 	

@@ -430,7 +430,7 @@ public class ScreenInteraction implements SetupInteraction {
 	 */
 	{
 		System.out
-				.printf("\nEngenheiro deve ter habilidade >=1 para integrar módulo do projeto escolhido");
+				.printf("%nEngenheiro deve ter habilidade >=1 para integrar módulo do projeto escolhido");
 
 		String messager = "Engenheiro deve ter habilidade maior ou igual a 1 para integrar módulo do projeto escolhido.";
 		String title = "Impossível integrar módulo.";

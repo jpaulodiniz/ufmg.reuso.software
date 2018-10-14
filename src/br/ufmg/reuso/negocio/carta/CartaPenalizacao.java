@@ -54,7 +54,7 @@ public class CartaPenalizacao extends Carta
 	@Override
 	public void mostrarCarta()
 	{
-		System.out.printf("%s\t%s\n%s\nCondicao: %s\n\n\n", super.getTituloCarta(), super.getCodigoCarta(), super.getTextoCarta(), getCondicaoProblema());
+		System.out.printf("%s\t%s%n%s%nCondicao: %s%n%n%n", super.getTituloCarta(), super.getCodigoCarta(), super.getTextoCarta(), getCondicaoProblema());
 	}
 	
 	public void inserirEfeito()

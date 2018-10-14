@@ -148,7 +148,7 @@ public class Jogador
 	
 	public void mostrarCartaMao()   /********************/			//TODO usado só pra teste
 	{
-		System.out.printf("Cartas do jogador %s:\n",getNome());
+		System.out.printf("Cartas do jogador %s:%n",getNome());
 		for (int i=0;i<NUMERO_MAX_CARTAS_MAO;i++)
 		{
 			if (cartas[i]==null)

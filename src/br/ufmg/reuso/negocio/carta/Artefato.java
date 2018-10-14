@@ -43,7 +43,7 @@ public class Artefato
 	 */
 	public void mostrarArtefato()
 	{
-		System.out.printf("QualidadeRuim: %s\nBugExistente: %s\n",qualidadeArtefatoRuim,bug);
+		System.out.printf("QualidadeRuim: %s%nBugExistente: %s%n",qualidadeArtefatoRuim,bug);
 	}
 	
 	public boolean isBug() 

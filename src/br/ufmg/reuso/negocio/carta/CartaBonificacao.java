@@ -57,8 +57,8 @@ public class CartaBonificacao extends Carta
 	@Override
 	public void mostrarCarta()
 	{
-		System.out.printf("%s\t%s\n%s\nCusto: %d\n", super.getTituloCarta(), super.getCodigoCarta(), super.getTextoCarta(), getCustoEfeito());
-		System.out.printf("TipoEfeito1: %d\tQuantitdadeEfeito1: %d\nTipoEfeito2: %d\tQuantidadeEfeito2: %d\n\n",getTipoPrimeiroEfeito(),getQuantidadePrimeiroEfeito(),getTipoSegundoEfeito(),getQuantidadeSegundoEfeito());
+		System.out.printf("%s\t%s%n%s%nCusto: %d%n", super.getTituloCarta(), super.getCodigoCarta(), super.getTextoCarta(), getCustoEfeito());
+		System.out.printf("TipoEfeito1: %d\tQuantitdadeEfeito1: %d%nTipoEfeito2: %d\tQuantidadeEfeito2: %d%n%n",getTipoPrimeiroEfeito(),getQuantidadePrimeiroEfeito(),getTipoSegundoEfeito(),getQuantidadeSegundoEfeito());
 	}
 	
 	public void inserirEfeito()					
