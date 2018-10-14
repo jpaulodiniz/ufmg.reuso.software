@@ -365,7 +365,7 @@ public class ScreenInteraction implements SetupInteraction {
 
 		String s = "";
 
-		while (s == "") {
+		while (s.equals("")) {
 
 			try {
 				s = JOptionPane.showInputDialog(null, messager, title,

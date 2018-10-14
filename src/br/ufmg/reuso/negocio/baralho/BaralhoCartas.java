@@ -62,7 +62,7 @@ public class BaralhoCartas
 
 		}
 
-		if(facilidade==Jogo.DIFICIL)
+		if(facilidade.equals(Jogo.DIFICIL))
 		{	
 			//#ifdef ConceptCard
 			CartaBonificacao [] cartaconceito;					//vetor que aloja cartas conceito do jogo
