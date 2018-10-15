@@ -227,7 +227,7 @@ public class ScreenTabuleiro extends JDialog {
 		
 		//Define posições
 		int x, y, width, height, ygap, numButtons;
-		x = y = width = height = ygap = numButtons = 0;
+		//x = y = width = height = ygap = numButtons = 0;
 
 		numButtons = 4;
 		width = myDim.width * 90 / 100;
@@ -623,7 +623,7 @@ public class ScreenTabuleiro extends JDialog {
 
 		int x, y, width, height, xgap;
 
-		x = y = width = height = xgap = 0;
+		//x = y = width = height = xgap = 0;
 
 		
 		xgap = (Mydim.width / (carta.length + 1)) * 30 / 100;

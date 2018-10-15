@@ -1492,7 +1492,7 @@ public final class Jogo {
 		case (CardsConstants.UNIZING_COMPONENT_NOW): {
 			int mesa = setupController.escolherMesaNeutralizaComponente();
 			jogador.getTabuleiro().getMesas()[mesa].setEfeitoModuloIntegradoNeutralizado(true);
-			// Not completely sure about this change.
+			// Not completely sure about it.
 			break;
 		}
 		case (CardsConstants.UNIZING_COMPONENT_VALIDATION_PHASE): {
