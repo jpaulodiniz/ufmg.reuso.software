@@ -1492,6 +1492,8 @@ public final class Jogo {
 		case (CardsConstants.UNIZING_COMPONENT_NOW): {
 			int mesa = setupController.escolherMesaNeutralizaComponente();
 			jogador.getTabuleiro().getMesas()[mesa].setEfeitoModuloIntegradoNeutralizado(true);
+			// Not completely sure about this change.
+			break;
 		}
 		case (CardsConstants.UNIZING_COMPONENT_VALIDATION_PHASE): {
 			jogador.getTabuleiro().setEfeitoModuloIntegradoNeutralizadoValidacao(true);
@@ -2651,8 +2653,8 @@ public final class Jogo {
 			retirarTodosArtefatos(jogadorAlvo, mesa, Mesa.ARTEFATOS_CODIGO);
 			break;
 		}
-		// default: /**nao havera essa opcao, mas a colocamos por seguranca*/
-		// break;
+		default: /**nao havera essa opcao, mas a colocamos por seguranca*/
+		    break;
 		}
 		switch (cartaUtilizada
 				.getTipoSegundoEfeito()) /**
