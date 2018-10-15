@@ -147,7 +147,8 @@ public class ScreenGamers extends JDialog implements ActionListener {
 		String [] retorno = new String[vectorReturn.size()];
 		
 		for (int i = 0; i < vectorReturn.size(); i++){
-			retorno[i] = new String (vectorReturn.get(i));
+			//retorno[i] = new String (vectorReturn.get(i));
+			retorno[i] = vectorReturn.get(i);
 		}
 		
 

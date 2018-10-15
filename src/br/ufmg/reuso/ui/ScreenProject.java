@@ -241,7 +241,7 @@ public class ScreenProject extends JDialog implements ActionListener {
 			modules = new String[projeto.getModulos().length];
 
 			for (int i = 0; i < projeto.getModulos().length; i++) {
-				modules[i] = new String(Integer.toString(i + 1) + "é -   ");
+				modules[i] = Integer.toString(i + 1) + "é -   ";
 
 				if (projeto.getModulos()[i].getRequisitos() > 0) {
 					modules[i] += (Integer.toString(projeto.getModulos()[i]
