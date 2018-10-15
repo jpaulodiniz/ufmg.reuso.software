@@ -108,7 +108,7 @@ public class ScreenStart extends JDialog implements ActionListener {
 
 		if (e.getActionCommand() == "config") {			
 			stringReturn = e.getActionCommand();
-			ScreenTabuleiro tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
+			//ScreenTabuleiro tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
 			//ScreenModo.createAndShowGetModo(tabuleiro).getModeGame();
 			
 		} else if (e.getActionCommand() == "Start") {

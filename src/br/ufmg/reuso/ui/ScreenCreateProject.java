@@ -248,7 +248,7 @@ public class ScreenCreateProject extends JDialog implements ActionListener {
 		// O uso da Thread com a utilização de invokeLater tem a
 		// função da construção total da GUI para somente então
 		// apresentá-la na tela.
-		final ScreenTabuleiro tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
+		// final ScreenTabuleiro tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {			
 			@Override
 			public void run() {
