@@ -507,7 +507,7 @@ public class ComponentCard extends JPanel {
 		if (img == null)
 			System.err.println("Image da carta  = Null");
 
-		Image menor;
+		Image menor = null;
 		double fator = 0;
 		if (x != 0 || y != 0) {
 
