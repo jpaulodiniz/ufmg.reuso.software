@@ -12,7 +12,7 @@ public class RepositorioArquivo implements IRepositorioArquivo{
 
 	@Override
 	public Properties getArquivoProperties(String nome){
-		FileInputStream arquivo;
+		FileInputStream arquivo = null;
 		this.arquivoProperties = new Properties();
 		try {
 			arquivo = new FileInputStream(nome);
@@ -22,7 +22,17 @@ public class RepositorioArquivo implements IRepositorioArquivo{
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			if (arquivo != null) {
+				try {
+					arquivo.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+
+
 		return arquivoProperties;
 	}
 	
