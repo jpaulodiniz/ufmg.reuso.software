@@ -438,7 +438,15 @@ public class ScreenInteraction implements SetupInteraction {
 				JOptionPane.WARNING_MESSAGE);
 
 	}
-
+	@Override
+	public void exibirModuloNaoSelecionado()
+	{
+		/**Exibe GUI informando que o módulo para integração não foi selecionado**/
+		String messager = "Modulo não selecionado";
+		String title = "Modulo para integração não foi selecionado";
+		JOptionPane.showMessageDialog(null,messager,title
+		,JOptionPane.WARNING_MESSAGE);
+	}
 	@Override
 	public void exibirModuloJaIntegrado(int mesa) /**
 	 * exibe GUI informado que o
