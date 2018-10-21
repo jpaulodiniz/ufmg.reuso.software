@@ -3,7 +3,17 @@
     <properties/>
     <struct>
         <and abstract="true" mandatory="true" name="simulES">
-            <feature name="Base"/>
+            <and name="Base">
+                <feature mandatory="true" name="Tabuleiro"/>
+                <and name="Cartas">
+                    <feature name="Problemas"/>
+                    <feature name="Conceitos"/>
+                    <feature name="Artefatos"/>
+                    <feature name="EngenheirosDeSoftware"/>
+                </and>
+                <feature name="Jogadores"/>
+                <feature name="CartoesDeProjeto"/>
+            </and>
         </and>
     </struct>
     <constraints/>
