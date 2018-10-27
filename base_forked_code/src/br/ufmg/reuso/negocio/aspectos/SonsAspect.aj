@@ -15,8 +15,6 @@ pointcut jogouDado() : call (* Dado.sortearValor() );
 	
 	before() : jogouDado() {
 		try {
-	        // /home/leomax/Desktop/GIT_Reuso/repositorio/dcc030_software_reuse/base_forked_code
-			// /home/leomax/Desktop/GIT_Reuso/repositorio/dcc030_software_reuse/base_forked_code/Sons/toasty.wav 
 	        AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("./Sons/efeito_dado.wav"));
 	        AudioFormat format = inputStream.getFormat();
 	        DataLine.Info info = new DataLine.Info(Clip.class, format);
