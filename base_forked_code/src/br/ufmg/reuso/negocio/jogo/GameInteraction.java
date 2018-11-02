@@ -11,7 +11,7 @@ package br.ufmg.reuso.negocio.jogo;
 
 import br.ufmg.reuso.negocio.carta.Carta;
 //#ifdef ConceptCard
-import br.ufmg.reuso.negocio.carta.CartaBonificacao;
+//@import br.ufmg.reuso.negocio.carta.CartaBonificacao;
 //#endif
 import br.ufmg.reuso.negocio.carta.CartaEngenheiro;
 import br.ufmg.reuso.negocio.carta.CartaPenalizacao;
@@ -83,8 +83,8 @@ public interface GameInteraction
 
 	
 	//#ifdef ConceptCard
-	/**Utiliza carta conceito da mão do jogador e insere efeito oriundo da respectiva carta no tabuleiro do jogador*/
-	public Jogador inserirBeneficio(Jogo jogoAtual, Jogador jogadorAtual, CartaBonificacao cartaUtilizada);
+//@	/**Utiliza carta conceito da mão do jogador e insere efeito oriundo da respectiva carta no tabuleiro do jogador*/
+//@	public Jogador inserirBeneficio(Jogo jogoAtual, Jogador jogadorAtual, CartaBonificacao cartaUtilizada);
 	//#endif
 	
 	  

@@ -11,7 +11,7 @@ package br.ufmg.reuso.negocio.jogo;
 
 import br.ufmg.reuso.negocio.carta.Carta;
 //#ifdef ConceptCard
-import br.ufmg.reuso.negocio.carta.CartaBonificacao;
+//@import br.ufmg.reuso.negocio.carta.CartaBonificacao;
 //#endif
 import br.ufmg.reuso.negocio.carta.CartaEngenheiro;
 import br.ufmg.reuso.negocio.carta.CartaPenalizacao;
@@ -235,13 +235,13 @@ public class GameController implements GameInteraction
 		
 	
 	//#ifdef ConceptCard
-	/**Utiliza carta conceito da m�o do jogador e insere efeito oriundo da respectiva carta no tabuleiro do jogador*/
-	 @Override
-	public Jogador inserirBeneficio(Jogo jogoAtual, Jogador jogadorAtual, CartaBonificacao cartaUtilizada) 
-	{
-		Jogador auxiliar = jogoAtual.usarConceito(jogadorAtual, cartaUtilizada);
-		return auxiliar;
-	}
+//@	/**Utiliza carta conceito da m�o do jogador e insere efeito oriundo da respectiva carta no tabuleiro do jogador*/
+//@	 @Override
+//@	public Jogador inserirBeneficio(Jogo jogoAtual, Jogador jogadorAtual, CartaBonificacao cartaUtilizada) 
+//@	{
+//@		Jogador auxiliar = jogoAtual.usarConceito(jogadorAtual, cartaUtilizada);
+//@		return auxiliar;
+//@	}
 	 //#endif
 	
 	/**Utiliza carta problema da m�o do jogadorAtual e insere efeito oriundo da respectiva carta no tabuleiro do jogadorAlvo*/

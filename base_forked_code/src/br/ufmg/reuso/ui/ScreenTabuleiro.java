@@ -43,7 +43,7 @@ import javax.swing.text.StyledDocument;
 import br.ufmg.reuso.negocio.carta.Artefato;
 import br.ufmg.reuso.negocio.carta.Carta;
 //#ifdef ConceptCard
-import br.ufmg.reuso.negocio.carta.CartaBonificacao;
+//@import br.ufmg.reuso.negocio.carta.CartaBonificacao;
 //#endif
 import br.ufmg.reuso.negocio.carta.CartaEngenheiro;
 import br.ufmg.reuso.negocio.carta.CartaPenalizacao;
@@ -662,7 +662,7 @@ public class ScreenTabuleiro extends JDialog {
 				else {
 					if (
 							//#ifdef ConceptCard
-							(carta[i] instanceof CartaBonificacao) || 
+//@							(carta[i] instanceof CartaBonificacao) || 
 							//#endif
 							(carta[i] instanceof CartaEngenheiro)) {
 						btnUse.setEnabled(false);
@@ -866,10 +866,10 @@ public class ScreenTabuleiro extends JDialog {
 										(CartaEngenheiro) carta);
 					} 
 					//#ifdef ConceptCard
-					else if (carta instanceof CartaBonificacao) {
-						jogador = GameController.getGameController()
-								.inserirBeneficio(jogo, jogador, (CartaBonificacao) carta);
-					}
+//@					else if (carta instanceof CartaBonificacao) {
+//@						jogador = GameController.getGameController()
+//@								.inserirBeneficio(jogo, jogador, (CartaBonificacao) carta);
+//@					}
 					//#endif
 				} else {
 					System.out.println(((JButton) e.getSource()).getName()
@@ -1080,4 +1080,3 @@ public class ScreenTabuleiro extends JDialog {
 // =====================================================================================//
 // Fim da classe ScreenTabuleiro
 // =====================================================================================//
-

@@ -22,7 +22,7 @@ import java.util.Random;
 import br.ufmg.reuso.dados.carta.RepositorioCarta;
 import br.ufmg.reuso.negocio.carta.Carta;
 //#ifdef ConceptCard
-import br.ufmg.reuso.negocio.carta.CartaBonificacao;
+//@import br.ufmg.reuso.negocio.carta.CartaBonificacao;
 //#endif
 import br.ufmg.reuso.negocio.carta.CartaEngenheiro;
 import br.ufmg.reuso.negocio.carta.CartaPenalizacao;
@@ -36,7 +36,7 @@ public class BaralhoCartas
 	private int numeroTotalEngenheiro;
 	private int numeroTotalProblemas;
 	//#ifdef ConceptCard
-	private int numeroTotalConceito;
+//@	private int numeroTotalConceito;
 	//#endif
 	private int numeroCartasBaralhoAtual;								// contem o numero de cartas que o baralho tem no decorrer do jogo
 	private int currentCard;											/** índice da próxima carta a ser distribuída durante o jogo.*/
@@ -48,7 +48,7 @@ public class BaralhoCartas
 
 	public BaralhoCartas(String facilidade,
 			//#ifdef ConceptCard
-			int[] cartasConceito,
+//@			int[] cartasConceito,
 			//#endif
 			int [] cartasProblema) {
 
@@ -65,8 +65,8 @@ public class BaralhoCartas
 		if(facilidade==Jogo.DIFICIL)
 		{	
 			//#ifdef ConceptCard
-			CartaBonificacao [] cartaconceito;					//vetor que aloja cartas conceito do jogo
-			cartaconceito = inicializarCartasConceito(ModeGameConstants.PATH_CARTA_CONCEITO_DIFICIL,cartasConceito);
+//@			CartaBonificacao [] cartaconceito;					//vetor que aloja cartas conceito do jogo
+//@			cartaconceito = inicializarCartasConceito(ModeGameConstants.PATH_CARTA_CONCEITO_DIFICIL,cartasConceito);
 			//#endif
 
 			CartaPenalizacao[] cartaproblema;					//vetor de todas as cartas problema
@@ -79,7 +79,7 @@ public class BaralhoCartas
 			// contem o número de cartas total do jogo = soma de cartas de: conceito, engenheiro e problemas
 			setNumeroTotalCartas(getNumeroTotalProblemas()
 					//#ifdef ConceptCard
-					+ getNumeroTotalConceito() 
+//@					+ getNumeroTotalConceito() 
 					//#endif
 					+ getNumeroTotalEngenheiro());
 			
@@ -94,18 +94,18 @@ public class BaralhoCartas
 				else
 				{
 					//#ifdef ConceptCard
-					if(j<getNumeroTotalConceito())
-					{
-						baralho[i]=cartaconceito[j];													//preenchendo a parte do meio do baralho com cartas conceito
-						j++;
-					}
-					else
-					{
+//@					if(j<getNumeroTotalConceito())
+//@					{
+//@						baralho[i]=cartaconceito[j];													//preenchendo a parte do meio do baralho com cartas conceito
+//@						j++;
+//@					}
+//@					else
+//@					{
 					//#endif
 						baralho[i]=cartaproblema[k];													//preenchendo a parte final do baralho com cartas de problema
 						k++;
 					//#ifdef ConceptCard
-					}
+//@					}
 					//#endif
 				}
 			}
@@ -120,7 +120,7 @@ public class BaralhoCartas
 		setNumeroTotalEngenheiro(0);
 		setNumeroTotalProblemas(0);
 		//#ifdef ConceptCard
-		setNumeroTotalConceito(0);
+//@		setNumeroTotalConceito(0);
 		//#endif
 		setNumeroCartasBaralhoAtual(0);									/**o baralho não contém nenhuma carta quando construído*/
 		this.currentCard = 0;
@@ -130,68 +130,68 @@ public class BaralhoCartas
 	}
 
 	//#ifdef ConceptCard
-	public CartaBonificacao[] inicializarCartasConceito(String dificuldade, int[] cartasConceitoSelecionadas)
-	{
-		/**
-		 * Reuso de Software 2016 - Código Modificado
-		 */
-		String[] arquivosDiretorio = repositorio.getNomeArquivosPasta(dificuldade);	
-		/**preenhendo um vetor de string com nome dos arquivos do diretorio*/
-
-		ArrayList <String> somenteArquivosProperties = new ArrayList <String>();;
-		for (int i=0;i<arquivosDiretorio.length;i++)
-		{
-			if((arquivosDiretorio[i].endsWith(".properties"))&&(selecionarCartaConceito(cartasConceitoSelecionadas,arquivosDiretorio[i])==true))/**testando se arquivo do diretório é .properties e se carta foi selecionada*/
-				somenteArquivosProperties.add(arquivosDiretorio[i]);			/**adciona arquivo à lista de array de arquivos properties conforme cartas selecionadas para o jogo*/
-		}
-
-		setNumeroTotalConceito(somenteArquivosProperties.size());						/**numero de cartas conceito total que o baralho terá*/
-		CartaBonificacao [] cartaconceito = new CartaBonificacao[getNumeroTotalConceito()];	/**vetor que aloja cartas conceito do jogo*/
-
-		for(int i=0;i<somenteArquivosProperties.size();i++)								/**irá abrir todos os arquivos e extrair dados deles*/
-		{
-
-			try
-			{
-				/**construindo a carta com dados do arquivo cujo nome está na posicao i do vetor de arquivos do diretorio*/
-				/**
-				 * Reuso de Software 2016 - Código Modificado
-				 */
-				cartaconceito[i] = repositorio.obterCartaConceito(dificuldade + File.separator + somenteArquivosProperties.get(i));; 	
-
-
-			}
-			catch (NoSuchElementException noSuchElementException)		/**se os dados estiverem fora do formato ou se não haver mais dados para saída, há problema*/
-			{
-				System.exit(1);											/**jogo termina sem êxito devido ao problema*/
-			}
-		}
-		return cartaconceito;
-	}
+//@	public CartaBonificacao[] inicializarCartasConceito(String dificuldade, int[] cartasConceitoSelecionadas)
+//@	{
+//@		/**
+//@		 * Reuso de Software 2016 - Código Modificado
+//@		 */
+//@		String[] arquivosDiretorio = repositorio.getNomeArquivosPasta(dificuldade);	
+//@		/**preenhendo um vetor de string com nome dos arquivos do diretorio*/
+//@
+//@		ArrayList <String> somenteArquivosProperties = new ArrayList <String>();;
+//@		for (int i=0;i<arquivosDiretorio.length;i++)
+//@		{
+//@			if((arquivosDiretorio[i].endsWith(".properties"))&&(selecionarCartaConceito(cartasConceitoSelecionadas,arquivosDiretorio[i])==true))/**testando se arquivo do diretório é .properties e se carta foi selecionada*/
+//@				somenteArquivosProperties.add(arquivosDiretorio[i]);			/**adciona arquivo à lista de array de arquivos properties conforme cartas selecionadas para o jogo*/
+//@		}
+//@
+//@		setNumeroTotalConceito(somenteArquivosProperties.size());						/**numero de cartas conceito total que o baralho terá*/
+//@		CartaBonificacao [] cartaconceito = new CartaBonificacao[getNumeroTotalConceito()];	/**vetor que aloja cartas conceito do jogo*/
+//@
+//@		for(int i=0;i<somenteArquivosProperties.size();i++)								/**irá abrir todos os arquivos e extrair dados deles*/
+//@		{
+//@
+//@			try
+//@			{
+//@				/**construindo a carta com dados do arquivo cujo nome está na posicao i do vetor de arquivos do diretorio*/
+//@				/**
+//@				 * Reuso de Software 2016 - Código Modificado
+//@				 */
+//@				cartaconceito[i] = repositorio.obterCartaConceito(dificuldade + File.separator + somenteArquivosProperties.get(i));; 	
+//@
+//@
+//@			}
+//@			catch (NoSuchElementException noSuchElementException)		/**se os dados estiverem fora do formato ou se não haver mais dados para saída, há problema*/
+//@			{
+//@				System.exit(1);											/**jogo termina sem êxito devido ao problema*/
+//@			}
+//@		}
+//@		return cartaconceito;
+//@	}
 	//#endif
 
 	//#ifdef ConceptCard
-	public boolean selecionarCartaConceito  (int [] cartasConceitoSelecionadas, String cartaAtual)
-	{
-		for (int i=0;i<cartasConceitoSelecionadas.length;i++)
-		{
-			if(cartasConceitoSelecionadas[i]==ModeGameConstants.ALL_CARDS_CONCEITO)
-				return true;
-			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_CODIGO)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_CODIGO)))
-				return true;
-			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_COMUNICACAO)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_COMUNICACAO)))
-				return true;
-			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_DESENHO)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_DESENHO)))
-				return true;
-			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_GERENCIA)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_GERENCIA)))
-				return true;
-			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_RECURSOS_HUMANOS)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_RELACIONAMENTO_HUMANO)))
-				return true;
-			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_REQUISITOS)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_REQUISITOS)))
-				return true;
-		}
-		return false;
-	}
+//@	public boolean selecionarCartaConceito  (int [] cartasConceitoSelecionadas, String cartaAtual)
+//@	{
+//@		for (int i=0;i<cartasConceitoSelecionadas.length;i++)
+//@		{
+//@			if(cartasConceitoSelecionadas[i]==ModeGameConstants.ALL_CARDS_CONCEITO)
+//@				return true;
+//@			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_CODIGO)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_CODIGO)))
+//@				return true;
+//@			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_COMUNICACAO)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_COMUNICACAO)))
+//@				return true;
+//@			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_DESENHO)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_DESENHO)))
+//@				return true;
+//@			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_GERENCIA)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_GERENCIA)))
+//@				return true;
+//@			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_RECURSOS_HUMANOS)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_RELACIONAMENTO_HUMANO)))
+//@				return true;
+//@			if((cartasConceitoSelecionadas[i]==ModeGameConstants.CARDS_CONCEITO_REQUISITOS)&&(cartaAtual.startsWith(ModeGameConstants.PATH_CONCEITO_REQUISITOS)))
+//@				return true;
+//@		}
+//@		return false;
+//@	}
 	//#endif
 
 	public CartaPenalizacao[] inicializarCartasProblemas(String dificuldade,int [] cartasProblemaSelecionadas)
@@ -401,18 +401,18 @@ public class BaralhoCartas
 
 
 	//#ifdef ConceptCard
-	public int getNumeroTotalConceito()
-	{
-		return numeroTotalConceito;
-	}
+//@	public int getNumeroTotalConceito()
+//@	{
+//@		return numeroTotalConceito;
+//@	}
 	//#endif
 
 
 	//#ifdef ConceptCard
-	public void setNumeroTotalConceito(int numeroTotalConceito)
-	{
-		this.numeroTotalConceito = numeroTotalConceito;
-	}
+//@	public void setNumeroTotalConceito(int numeroTotalConceito)
+//@	{
+//@		this.numeroTotalConceito = numeroTotalConceito;
+//@	}
 	//#endif
 
 

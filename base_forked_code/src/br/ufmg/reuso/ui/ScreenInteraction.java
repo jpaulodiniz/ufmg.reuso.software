@@ -14,7 +14,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
 //#ifdef ConceptCard
-import br.ufmg.reuso.negocio.carta.CartaBonificacao;
+//@import br.ufmg.reuso.negocio.carta.CartaBonificacao;
 //#endif
 import br.ufmg.reuso.negocio.carta.CartaPenalizacao;
 import br.ufmg.reuso.negocio.carta.CartaoProjeto;
@@ -525,19 +525,21 @@ public class ScreenInteraction implements SetupInteraction {
 		return null;
 	}
 
-	@Override
-	public void exibirQuantidadeBeneficio(int quantidade) {
-		// TODO Auto-generated method stub
-
-	}
+	//#ifdef ConceptCard
+//@	@Override
+//@	public void exibirQuantidadeBeneficio(int quantidade) {
+//@		// TODO Auto-generated method stub
+//@
+//@	}
+	//#endif
 
 	//#ifdef ConceptCard
-	@Override
-	public void exibirEfeitoinserido(Jogador jogadorAtual,
-			CartaBonificacao cartaUtilizada) {
-		// TODO Auto-generated method stub
-
-	}
+//@	@Override
+//@	public void exibirEfeitoinserido(Jogador jogadorAtual,
+//@			CartaBonificacao cartaUtilizada) {
+//@		// TODO Auto-generated method stub
+//@
+//@	}
 	//#endif
 
 	@Override
@@ -548,27 +550,27 @@ public class ScreenInteraction implements SetupInteraction {
 	}
 
 	//#ifdef ConceptCard
-	@Override
-	public int[] inserirCartasConceitoSelecionadas() /**
-	 * insere quais tipos de
-	 * cartas conceito o jogo terá, conforme as constantes de ModeGmaeConstants
-	 */
-	{
-		// System.out.println("quantos tipos de cartas de conceito?");
-		// Scanner in = new Scanner(System.in);
-		// int[] cartas = new int [in.nextInt()];
-		// for(int i=0;i<cartas.length;i++)
-		// {
-		// System.out.println("quais tipos de cartas você deseja:\n0: todas\n1: código\n2:comunicação\n3:desenho\n4:gerencia\n5:RH\n6:requisitos");
-		// cartas[i]=in.nextInt();
-		// }
-		// return cartas;
-		int[] out = (ScreenSelectCards
-				.createAndShowSelectCards("Selecione os tipos de carta conceito.")
-				.getReturn());
-
-		return out;
-	}
+//@	@Override
+//@	public int[] inserirCartasConceitoSelecionadas() /**
+//@	 * insere quais tipos de
+//@	 * cartas conceito o jogo terá, conforme as constantes de ModeGmaeConstants
+//@	 */
+//@	{
+//@		// System.out.println("quantos tipos de cartas de conceito?");
+//@		// Scanner in = new Scanner(System.in);
+//@		// int[] cartas = new int [in.nextInt()];
+//@		// for(int i=0;i<cartas.length;i++)
+//@		// {
+//@		// System.out.println("quais tipos de cartas você deseja:\n0: todas\n1: código\n2:comunicação\n3:desenho\n4:gerencia\n5:RH\n6:requisitos");
+//@		// cartas[i]=in.nextInt();
+//@		// }
+//@		// return cartas;
+//@		int[] out = (ScreenSelectCards
+//@				.createAndShowSelectCards("Selecione os tipos de carta conceito.")
+//@				.getReturn());
+//@
+//@		return out;
+//@	}
 	//#endif
 
 	@Override

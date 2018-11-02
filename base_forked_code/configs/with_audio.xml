@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="SimulES_Game"/>
+    <feature automatic="selected" name="GameSetup"/>
+    <feature automatic="selected" name="ChooseLevel"/>
+    <feature automatic="selected" name="CreateProject"/>
+    <feature automatic="selected" name="Project"/>
+    <feature automatic="selected" name="Board"/>
+    <feature automatic="selected" name="Artifacts"/>
+    <feature automatic="selected" name="Tables"/>
+    <feature automatic="selected" name="SeeProject"/>
+    <feature automatic="selected" name="SeeOponentBoard"/>
+    <feature automatic="selected" name="DeckOfCards"/>
+    <feature automatic="selected" name="GameCards"/>
+    <feature automatic="selected" name="SoftwareEngineer"/>
+    <feature automatic="selected" name="ProblemCard"/>
+    <feature automatic="selected" name="ArtifactCards"/>
+    <feature automatic="selected" name="SoftwareEngineerActions"/>
+    <feature automatic="selected" name="InspectArtifact"/>
+    <feature automatic="selected" name="CreateArtifact"/>
+    <feature automatic="selected" name="CorrectArtifact"/>
+    <feature automatic="selected" name="Audio"/>
+    <feature manual="selected" name="AudioSettings"/>
+</configuration>

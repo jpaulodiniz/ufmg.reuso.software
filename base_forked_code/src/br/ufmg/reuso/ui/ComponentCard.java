@@ -34,7 +34,7 @@ import javax.swing.text.StyledDocument;
 
 import br.ufmg.reuso.negocio.carta.Carta;
 //#ifdef ConceptCard
-import br.ufmg.reuso.negocio.carta.CartaBonificacao;
+//@import br.ufmg.reuso.negocio.carta.CartaBonificacao;
 //#endif
 import br.ufmg.reuso.negocio.carta.CartaEngenheiro;
 import br.ufmg.reuso.negocio.carta.CartaPenalizacao;
@@ -259,35 +259,35 @@ public class ComponentCard extends JPanel {
 
 		}
 		//#ifdef ConceptCard
-		else if (card instanceof CartaBonificacao) {
-			{
-				CartaBonificacao cartaConceito = (CartaBonificacao) card;
-
-				lblType.setText("Conceito");
-
-				paneRef = new JTextPane();
-				SimpleAttributeSet bSet = new SimpleAttributeSet();
-				StyleConstants.setAlignment(bSet,
-						StyleConstants.ALIGN_JUSTIFIED);
-				
-				StyledDocument doc = paneRef.getStyledDocument();
-				doc.setParagraphAttributes(0, doc.getLength(), bSet, false);
-				paneRef.setText(cartaConceito.getReferenciaBibliografica());
-				paneRef.setInheritsPopupMenu(true);
-				paneRef.setAlignmentX(CENTER_ALIGNMENT);
-				paneRef.setFont(font);
-				paneRef.setBorder(BorderFactory.createTitledBorder(
-						BorderFactory.createLineBorder(Color.LIGHT_GRAY),
-						cartaConceito.getTituloCarta(), TitledBorder.LEFT,
-						TitledBorder.DEFAULT_POSITION, font));
-				
-				paneRef.setEditable(false);
-				sliderPaneRef = new JScrollPane();
-				sliderPaneRef.setViewportView(paneRef);
-				panel.add(sliderPaneRef);
-			}
-
-		}
+//@		else if (card instanceof CartaBonificacao) {
+//@			{
+//@				CartaBonificacao cartaConceito = (CartaBonificacao) card;
+//@
+//@				lblType.setText("Conceito");
+//@
+//@				paneRef = new JTextPane();
+//@				SimpleAttributeSet bSet = new SimpleAttributeSet();
+//@				StyleConstants.setAlignment(bSet,
+//@						StyleConstants.ALIGN_JUSTIFIED);
+//@				
+//@				StyledDocument doc = paneRef.getStyledDocument();
+//@				doc.setParagraphAttributes(0, doc.getLength(), bSet, false);
+//@				paneRef.setText(cartaConceito.getReferenciaBibliografica());
+//@				paneRef.setInheritsPopupMenu(true);
+//@				paneRef.setAlignmentX(CENTER_ALIGNMENT);
+//@				paneRef.setFont(font);
+//@				paneRef.setBorder(BorderFactory.createTitledBorder(
+//@						BorderFactory.createLineBorder(Color.LIGHT_GRAY),
+//@						cartaConceito.getTituloCarta(), TitledBorder.LEFT,
+//@						TitledBorder.DEFAULT_POSITION, font));
+//@				
+//@				paneRef.setEditable(false);
+//@				sliderPaneRef = new JScrollPane();
+//@				sliderPaneRef.setViewportView(paneRef);
+//@				panel.add(sliderPaneRef);
+//@			}
+//@
+//@		}
 		//#endif
 		else if (card instanceof CartaPenalizacao) {
 
@@ -432,21 +432,21 @@ public class ComponentCard extends JPanel {
 
 		}
 		//#ifdef ConceptCard
-		else if (card instanceof CartaBonificacao) {
-
-			y += height + ygap;
-			x = xgap;
-			width = mySize.width * 90 / 100;
-			height = mySize.height * 40 / 100;
-			sliderPaneRef.setBounds(x, y, width, height);
-
-			y += height + ygap;
-			// x = gap;
-			width = mySize.width * 90 / 100;
-			height = mySize.height * 40 / 100;
-			sliderPaneDesc.setBounds(x, y, width, height);
-
-		}
+//@		else if (card instanceof CartaBonificacao) {
+//@
+//@			y += height + ygap;
+//@			x = xgap;
+//@			width = mySize.width * 90 / 100;
+//@			height = mySize.height * 40 / 100;
+//@			sliderPaneRef.setBounds(x, y, width, height);
+//@
+//@			y += height + ygap;
+//@			// x = gap;
+//@			width = mySize.width * 90 / 100;
+//@			height = mySize.height * 40 / 100;
+//@			sliderPaneDesc.setBounds(x, y, width, height);
+//@
+//@		}
 		//#endif
 		else if (card instanceof CartaPenalizacao) {
 
@@ -552,4 +552,3 @@ public class ComponentCard extends JPanel {
 //=====================================================================================//
 //Fim da classe ComponentCard
 //=====================================================================================//
-
