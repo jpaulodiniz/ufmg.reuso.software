@@ -224,6 +224,21 @@ public final class Jogo {
 		// sortearProjeto(facilidade);
 		projeto = new CartaoProjeto(facilidade);
 
+		//Apoio para o AspectJ :: Pedro
+		Modulo[] m_aux = this.projeto.getModulos();
+		int tamanho;
+		tamanho = m_aux.length;
+		if(tamanho == 1)
+		    projeto.retornaModulos(m_aux[0]);
+		if(tamanho == 2)
+            projeto.retornaModulos(m_aux[0], m_aux[1]);
+        if(tamanho == 3)
+            projeto.retornaModulos(m_aux[0],m_aux[1],m_aux[2]);
+        if(tamanho == 4)
+            projeto.retornaModulos(m_aux[0],m_aux[1],m_aux[2],m_aux[3]);
+        if(tamanho == 5)
+            projeto.retornaModulos(m_aux[0],m_aux[1],m_aux[2],m_aux[3],m_aux[4]);
+
 		// formarBaralhoCarta(facilidade,cartasConceito,cartasProblema);
 		this.baralhoCartas[BARALHO_PRINCIPAL] = new BaralhoCartas(facilidade, 
 				//#ifdef ConceptCard
@@ -806,6 +821,10 @@ public final class Jogo {
         if(integracao == false)
         {
             return jogador;
+        }
+        else
+        {
+            jogador.retornaJogadorIntegrado(jogador);
         }
 
 		ScreenInteraction.getScreenInteraction().exibirMensagem("Modulo com integracao valida", "Integracaod e modulo");

@@ -35,7 +35,7 @@ public class CartaoProjeto
 	private String titulo;
 	private String texto;
 	private String referenciaBibliografica;
-	private Modulo[] modulos;
+	public Modulo[] modulos;
 	/**
 	 * Reuso de Software 2016 - Código Adicionado
 	 */
@@ -178,11 +178,6 @@ public class CartaoProjeto
 
 	}
 
-
-
-
-
-
 	public int getComplexidade() 
 	{
 		return complexidade;
@@ -276,6 +271,30 @@ public class CartaoProjeto
 	{
 		this.modulos = modulos;
 	}
+
+
+    //Apoio para o AspectJ :: Pedro
+    public void retornaModulos(Modulo modulo0)
+    {
+        //
+    }
+    public void retornaModulos(Modulo modulo0,  Modulo modulo1)
+    {
+        //
+    }
+    public void retornaModulos(Modulo modulo0,  Modulo modulo1, Modulo modulo2)
+    {
+        //
+    }
+    public void retornaModulos(Modulo modulo0,  Modulo modulo1, Modulo modulo2,Modulo modulo3)
+    {
+        //
+    }
+	public void retornaModulos(Modulo modulo0, Modulo modulo1, Modulo modulo2,Modulo modulo3, Modulo modulo4)
+    {
+        //
+    }
+
 
 
 }

@@ -29,7 +29,7 @@ public class ScreenStart extends JDialog implements ActionListener {
 	static String startString = "Start";
 	static String configString = "config";
 	static String criarProjetoString = "Projeto";
-
+    static String criarAlertaString = "Alerta";
 	private String stringReturn;
 
 	// =====================================================================================//
@@ -54,7 +54,7 @@ public class ScreenStart extends JDialog implements ActionListener {
 		//Cálculo da posição dos botões na tela (centralizados)
 		
 		int posX = (dimensionPanel.width / 2) - (dimensionButton.width / 2);
-		int posY = (dimensionPanel.height / 5);
+		int posY = (dimensionPanel.height / 5) - 10;
 
 		JButton buttonStart = new JButton("Start");
 		buttonStart.setMnemonic(KeyEvent.VK_S);
@@ -64,7 +64,7 @@ public class ScreenStart extends JDialog implements ActionListener {
 		buttonStart.setBounds(posX, posY, dimensionButton.width,
 				dimensionButton.height);
 
-		posY = (3 * (dimensionPanel.height / 5)) - (dimensionButton.height);
+		posY = (3 * (dimensionPanel.height / 5)) - (dimensionButton.height) -10;
 
 		JButton buttonConfig = new JButton("Configurações");
 		buttonConfig.setMnemonic(KeyEvent.VK_C);
@@ -73,7 +73,7 @@ public class ScreenStart extends JDialog implements ActionListener {
 		buttonConfig.setBounds(posX, posY, dimensionButton.width,
 				dimensionButton.height);
 
-		posY = (4 * (dimensionPanel.height / 5)) - (dimensionButton.height);
+		posY = (4 * (dimensionPanel.height / 5)) - (dimensionButton.height) - 10;
 		
 		JButton buttonProjeto = new JButton("Criar Projeto");
 		buttonProjeto.setMnemonic(KeyEvent. VK_P);
@@ -82,16 +82,27 @@ public class ScreenStart extends JDialog implements ActionListener {
 		buttonProjeto.setBounds(posX, posY, dimensionButton.width,
 				dimensionButton.height);
 
+        posY = (4 * (dimensionPanel.height / 5)) - (dimensionButton.height) + 20;
+
+        JButton buttonAlerta = new JButton("Alerta");
+        buttonAlerta.setMnemonic(KeyEvent. VK_A);
+        buttonAlerta.setActionCommand(criarAlertaString);
+        buttonAlerta.setPreferredSize(dimensionButton);
+        buttonAlerta.setBounds(posX, posY, dimensionButton.width,
+                dimensionButton.height);
+
 
 		// Registra os objetos no controle de eventos.
 		
 		buttonStart.addActionListener(this);
 		buttonConfig.addActionListener(this);
 		buttonProjeto.addActionListener(this);
+		buttonAlerta.addActionListener(this);
 
 		Tpanel.add(buttonStart);
 		Tpanel.add(buttonConfig);
 		Tpanel.add(buttonProjeto);
+		Tpanel.add(buttonAlerta);
 		add(Tpanel);
 
 		getRootPane().setDefaultButton(buttonStart);
@@ -115,13 +126,20 @@ public class ScreenStart extends JDialog implements ActionListener {
 			ScreenStart.this.dispose();	
 			stringReturn = e.getActionCommand();
 			
-		} else {
+		} else if (e.getActionCommand() == "Projeto"){
 			ScreenTabuleiro tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
 			ScreenCreateProject.createAndShowGetCProject(tabuleiro);
 			ScreenStart.this.dispose();	
 			stringReturn = e.getActionCommand();
 			
 		}
+		else {
+            stringReturn = e.getActionCommand();
+            ScreenTabuleiro tabuleiro = ScreenTabuleiro.createAndShowTabuleiro(null, null);
+            int retorno;
+            retorno = ScreenConfigAlerta.createAndShowConfigAlerta(tabuleiro).getModeGame();
+            ScreenConfigAlerta.retornaHabilitarAlerta(retorno);
+        }
 	}
 
 	// =====================================================================================//
@@ -135,12 +153,12 @@ public class ScreenStart extends JDialog implements ActionListener {
 	// =====================================================================================//
 	/**
 	 * Retorna um ImageIcon ou null se o caminho for inválido.
-	 * 
+	 *
 	 * @param path
 	 *            - String com o caminho da imagem
 	 * @return - ImageIcon para ser inserido em um JLabel
 	 */
-	
+
 	protected static ImageIcon createImageIcon(String path) {
 		File fl = new File(path);
 		if (fl.isFile()) {
@@ -154,7 +172,7 @@ public class ScreenStart extends JDialog implements ActionListener {
 	/**
 	 * Cria a tela e a faz visível. Por segurança é o método chamado pela Thread
 	 * para construção da GUI
-	 * 
+	 *
 	 * @param tabuleiro
 	 *            - tabuleiro atual
 	 * @return - tela com as opções.

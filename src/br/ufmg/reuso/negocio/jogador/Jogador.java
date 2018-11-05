@@ -229,5 +229,10 @@ public class Jogador
 	{
 		this.dadoJogado = dadoJogado;
 	}
+
+	public void retornaJogadorIntegrado(Jogador jogador)
+	{
+
+	}
 	
 }
